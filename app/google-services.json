@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "916734081372",
+    "firebase_url": "https://ebicos-635a7.firebaseio.com",
+    "project_id": "ebicos-635a7",
+    "storage_bucket": "ebicos-635a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916734081372:android:9aafeb3bfc0358ad",
+        "android_client_info": {
+          "package_name": "com.example.util.ebicos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916734081372-7i4bt0bqffh2demgjeftu5rcr9e703hc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.util.ebicos",
+            "certificate_hash": "8cdb6860fa0cb3e81bc517019f9e8f89f0f046f6"
+          }
+        },
+        {
+          "client_id": "916734081372-9n34pd86e2lo6s23l26ma3pfs41uk80e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS7e5O9S77swQPdIyI31-z1IoVJGbJnhI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916734081372-9n34pd86e2lo6s23l26ma3pfs41uk80e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/logobird" />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ebicos" />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/steresa" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_profissional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/btn_shape02"
+            android:text="Sou um Profissional"
+            android:textColor="@color/colorGrafite" />
+
+        <Button
+            android:id="@+id/btn_encontrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn_shape01"
+            android:text="Encontrar um profissional"
+            android:textColor="@color/colorBranco01" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="12dp"
+                android:gravity="center_horizontal"
+                android:text="Serviços em domicílio"
+                android:textColor="@color/colorGrafite" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
