@@ -24,7 +24,11 @@
             android:name=".ProfList"
             android:launchMode="singleTop"
             android:parentActivityName=".Home"></activity>
-        <activity android:name=".ProfDetail"></activity>
+        <activity
+            android:name=".ProfDetail"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ProfList"></activity>
+
     </application>
 
 </manifest>

@@ -3,6 +3,7 @@ package com.example.util.ebicos;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +18,9 @@ import com.squareup.picasso.Picasso;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfDetail extends AppCompatActivity {
-    TextView profile_nome, profile_sobrenome, profile_profissao, profile_fixo, profile_celular,
+
+
+    TextView profile_nome, profile_sobrenome, profile_profissao, profile_descricao, profile_fixo, profile_celular,
             profile_pagamento, profile_h1, profile_h2, profile_h3, profile_h4, profile_h5, profile_h6;
 
     ImageView image_prof;
@@ -36,15 +39,19 @@ public class ProfDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prof_detail);
 
+
+
+
         database = FirebaseDatabase.getInstance();
         profissional = database.getReference("Prof");
 
         profile_nome = findViewById(R.id.profile_nome);
         profile_sobrenome = findViewById(R.id.profile_sobrenome);
-        profile_profissao = findViewById(R.id.profile_profissao);
+        //profile_profissao = findViewById(R.id.profile_profissao);
+        profile_descricao = findViewById(R.id.profile_descricao);
         profile_pagamento = findViewById(R.id.profile_pagamento);
-        profile_fixo = findViewById(R.id.profile_fixo);
-        profile_celular = findViewById(R.id.profile_celular);
+       // profile_fixo = findViewById(R.id.profile_fixo);
+        //profile_celular = findViewById(R.id.profile_celular);
         profile_h1 = findViewById(R.id.profile_h1);
         profile_h2 = findViewById(R.id.profile_h2);
         profile_h3 = findViewById(R.id.profile_h3);
@@ -56,7 +63,7 @@ public class ProfDetail extends AppCompatActivity {
 
         img_user = findViewById(R.id.img_user);
 
-        collapsingToolbarLayout = findViewById(R.id.collapsing);
+        //collapsingToolbarLayout = findViewById(R.id.collapsing);
 
 
         if (getIntent() != null)
@@ -83,10 +90,11 @@ public class ProfDetail extends AppCompatActivity {
 
                 profile_nome.setText(prof.getNome());
                 profile_sobrenome.setText(prof.getSobrenome());
-                profile_profissao.setText(prof.getProfissao());
+                //profile_profissao.setText(prof.getProfissao());
+                profile_descricao.setText(prof.getDescricao());
                 profile_pagamento.setText(prof.getPagamento());
-                profile_fixo.setText(prof.getFixo());
-                profile_celular.setText(prof.getCelular());
+//                profile_fixo.setText(prof.getFixo());
+//                profile_celular.setText(prof.getCelular());
                 profile_h1.setText(prof.getH1());
                 profile_h2.setText(prof.getH2());
                 profile_h3.setText(prof.getH3());
