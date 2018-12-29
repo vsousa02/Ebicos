@@ -1,5 +1,6 @@
 package com.example.util.ebicos;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,6 +31,8 @@ public class ProfList extends AppCompatActivity {
 
     String categoryId = "";
 
+
+
     FirebaseRecyclerAdapter <Prof, ProfViewHolder> adapter;
 
     @Override
@@ -44,6 +47,9 @@ public class ProfList extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         profList = database.getReference("Prof");
+
+
+
 
         recyclerView = findViewById(R.id.recycler_prof);
         recyclerView.setHasFixedSize(true);
@@ -69,7 +75,7 @@ public class ProfList extends AppCompatActivity {
                 viewHolder.item_name.setText(model.getNome());
                 viewHolder.item_sobrenome.setText(model.getSobrenome());
                 viewHolder.item_prof.setText(model.getProfissao());
-                viewHolder.item_desc.setText(model.getDescricao());
+                //viewHolder.item_desc.setText(model.getDescricao());
 
                 Picasso.with(getBaseContext()).load(model.getImagem())
                         .into(viewHolder.item_image);

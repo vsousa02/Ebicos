@@ -25,7 +25,7 @@ public class ProfViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         item_name = itemView.findViewById(R.id.item_name);
         item_sobrenome = itemView.findViewById(R.id.item_sobrenome);
         item_prof = itemView.findViewById(R.id.item_prof);
-        item_desc = itemView.findViewById(R.id.item_desc);
+        //item_desc = itemView.findViewById(R.id.item_desc);
         item_image = itemView.findViewById(R.id.item_image);
 
         itemView.setOnClickListener(this);

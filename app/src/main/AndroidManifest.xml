@@ -23,12 +23,13 @@
         <activity
             android:name=".ProfList"
             android:launchMode="singleTop"
-            android:parentActivityName=".Home"></activity>
+            android:parentActivityName=".Home" />
         <activity
             android:name=".ProfDetail"
+            android:theme="@style/AppTheme.PopMMe"
             android:launchMode="singleTop"
-            android:parentActivityName=".ProfList"></activity>
-
+            android:parentActivityName=".ProfList" />
+        <activity android:name=".PopActivity"></activity>
     </application>
 
 </manifest>

@@ -4,7 +4,7 @@
     android:id="@+id/toolbar_home"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorGrafite02"
+    android:background="@color/colorPrimaryDark"
     app:theme='@style/ThemeOverlay.AppCompat.Dark.ActionBar'>
 
 

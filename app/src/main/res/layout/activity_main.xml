@@ -9,11 +9,11 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="60dp"
-        android:src="@drawable/logobird" />
+        android:src="@drawable/eb_logo" />
 
     <ImageView
         android:layout_width="160dp"
@@ -23,13 +23,16 @@
         android:src="@drawable/ebicos" />
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="20dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/steresa" />
+        android:layout_marginTop="16dp"
+        android:src="@drawable/bairros_l" />
 
-    <LinearLayout
+
+
+    <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
@@ -41,10 +44,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="36dp"
+            android:layout_above="@id/btn_encontrar"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/btn_shape02"
             android:text="Sou um Profissional"
-            android:textColor="@color/colorGrafite" />
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btn_encontrar"
@@ -52,7 +56,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="45dp"
             android:background="@drawable/btn_shape01"
             android:text="Encontrar um profissional"
             android:textColor="@color/colorBranco01" />
@@ -73,7 +78,7 @@
         </RelativeLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 
