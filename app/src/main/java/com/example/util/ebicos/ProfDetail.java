@@ -1,16 +1,20 @@
 package com.example.util.ebicos;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.util.ebicos.Model.Prof;
 import com.google.firebase.database.DataSnapshot;
@@ -20,21 +24,22 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.net.URL;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfDetail extends AppCompatActivity {
 
 
-    TextView profile_nome, profile_sobrenome, profile_profissao, profile_descricao, profile_fixo, profile_celular,
-            profile_pagamento, profile_h1, profile_h2, profile_h3, profile_h4, profile_h5, profile_h6;
+    TextView profile_nome, profile_sobrenome, profile_descricao;
 
-    ImageView image_prof;
+    ImageView image_prof, ic_favorito, ic_whats, ic_view;
 
     CircleImageView img_user;
 
-    CollapsingToolbarLayout collapsingToolbarLayout;
-
     String profId = "";
+    String celular;
+
 
     FirebaseDatabase database;
     DatabaseReference profissional;
@@ -69,23 +74,11 @@ public class ProfDetail extends AppCompatActivity {
 
         profile_nome = findViewById(R.id.profile_nome);
         profile_sobrenome = findViewById(R.id.profile_sobrenome);
-        //profile_profissao = findViewById(R.id.profile_profissao);
-        //profile_descricao = findViewById(R.id.profile_descricao);
-        //profile_pagamento = findViewById(R.id.profile_pagamento);
-       // profile_fixo = findViewById(R.id.profile_fixo);
-        //profile_celular = findViewById(R.id.profile_celular);
-        //profile_h1 = findViewById(R.id.profile_h1);
-        //profile_h2 = findViewById(R.id.profile_h2);
-        //profile_h3 = findViewById(R.id.profile_h3);
-        //profile_h4 = findViewById(R.id.profile_h4);
-        //profile_h5 = findViewById(R.id.profile_h5);
-        //profile_h6 = findViewById(R.id.profile_h6);
-
-        //image_prof = findViewById(R.id.image_prof);
-
         img_user = findViewById(R.id.img_user);
+        ic_favorito = findViewById(R.id.img_fav);
+        ic_whats = findViewById(R.id.img_whats);
+        ic_view = findViewById(R.id.img_view);
 
-        //collapsingToolbarLayout = findViewById(R.id.collapsing);
 
 
         if (getIntent() != null)
@@ -96,6 +89,25 @@ public class ProfDetail extends AppCompatActivity {
         }
 
 
+        ic_whats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                try{
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+celular));
+                    startActivity(intent);
+
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+
+                }
+
+            }
+        });
+
+
     }
 
     private void getDetailProf(String profId) {
@@ -104,25 +116,17 @@ public class ProfDetail extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Prof prof = dataSnapshot.getValue(Prof.class);
 
-               // Picasso.with(getBaseContext()).load(prof.getImagem())
-                        //.into(image_prof);
 
                 Picasso.with(getBaseContext()).load(prof.getImagem())
                         .into(img_user);
 
                 profile_nome.setText(prof.getNome());
                 profile_sobrenome.setText(prof.getSobrenome());
-                //profile_profissao.setText(prof.getProfissao());
-                //profile_descricao.setText(prof.getDescricao());
-                //profile_pagamento.setText(prof.getPagamento());
-//                profile_fixo.setText(prof.getFixo());
+
+                celular = prof.getCelular();
+
 //                profile_celular.setText(prof.getCelular());
-                //profile_h1.setText(prof.getH1());
-                //profile_h2.setText(prof.getH2());
-                //profile_h3.setText(prof.getH3());
-                //profile_h4.setText(prof.getH4());
-                //profile_h5.setText(prof.getH5());
-                //profile_h6.setText(prof.getH6());
+
 
 
             }

@@ -29,7 +29,6 @@
             android:theme="@style/AppTheme.PopMMe"
             android:launchMode="singleTop"
             android:parentActivityName=".ProfList" />
-        <activity android:name=".PopActivity"></activity>
     </application>
 
 </manifest>
